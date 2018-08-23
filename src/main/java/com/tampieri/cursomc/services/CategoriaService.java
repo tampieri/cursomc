@@ -8,10 +8,10 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
-//import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.tampieri.cursomc.domain.Categoria;
+import com.tampieri.cursomc.dto.CategoriaDTO;
 import com.tampieri.cursomc.repositories.CategoriaRepository;
 import com.tampieri.cursomc.services.exceptions.DataIntegrityException;
 import com.tampieri.cursomc.services.exceptions.ObjectNotFoundException;
@@ -52,9 +52,11 @@ public class CategoriaService {
 	}
 	
 	public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
-		PageRequest pageRequest = new PageRequest(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		return repo.findAll(pageRequest);
 	}
 	
-	
+	public Categoria fromDTO(CategoriaDTO objDTO) {
+		return new Categoria(objDTO.getId(), objDTO.getNome());
+	}
 }
