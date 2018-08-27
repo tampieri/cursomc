@@ -1,7 +1,5 @@
 package com.tampieri.cursomc.domain;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
