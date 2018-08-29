@@ -46,7 +46,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			"/categorias/**"
 	};
  	private static final String[] PUBLIC_MATCHERS_POST = {
-			"/clientes/**"
+ 			"/clientes/**",
+			"/auth/forgot/**"
 	};
  	@Override
 	protected void configure(HttpSecurity http) throws Exception {
