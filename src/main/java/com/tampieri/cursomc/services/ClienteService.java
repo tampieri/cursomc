@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.amazonaws.services.simpleemail.model.GetIdentityDkimAttributesRequest;
 import com.tampieri.cursomc.domain.Cidade;
 import com.tampieri.cursomc.domain.Cliente;
 import com.tampieri.cursomc.domain.Endereco;
